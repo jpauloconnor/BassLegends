@@ -6,3 +6,10 @@
         <input [(ngModel)]="legend.lastName" placeholder="name">
     </label>
 </div>
+
+<h2>Legends</h2>
+<ul class="legends">
+  <li *ngFor='let legend of legends' (click)="onSelect(legend)">
+    <span class="badge">{{legend.id}}</span> {{legend.lastName}}
+  </li>
+</ul>

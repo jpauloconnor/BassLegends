@@ -1,15 +1,20 @@
-<h2>{{legend.lastName}}</h2>
-
-<div><span>id: {{legend.id}}</span></div>
-<div>
-    <label>name:
-        <input [(ngModel)]="legend.lastName" placeholder="name">
-    </label>
-</div>
-
 <h2>Legends</h2>
 <ul class="legends">
-  <li *ngFor='let legend of legends' (click)="onSelect(legend)">
+  <li *ngFor="let legend of legends"
+    [class.selected]="legend === selectedLegend"
+    (click)="onSelect(legend)">
     <span class="badge">{{legend.id}}</span> {{legend.lastName}}
   </li>
 </ul>
+
+<div *ngIf="selectedLegend">
+
+  <h2>{{ selectedLegend.name | uppercase }} Details</h2>
+  <div><span>id: </span>{{selectedLegend.id}}</div>
+  <div>
+    <label>name:
+      <input [(ngModel)]="selectedLegend.lastName" placeholder="name">
+    </label>
+  </div>
+
+</div>

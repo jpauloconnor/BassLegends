@@ -11,14 +11,14 @@ import { LEGENDS } from '../mock-legends';
 export class LegendsComponent implements OnInit {
   legends = LEGENDS;
   
-  legend: Legend = {
-    id: 1,
-    lastName: 'Wooten'
-  }
+  selectedLegend: Legend;
   
   constructor() { }
 
   ngOnInit() {
   }
 
+  onSelect(legend: Legend): void {
+    this.selectedLegend = legend;
+  }
 }

@@ -12,13 +12,17 @@ export class LegendsComponent implements OnInit {
   legends = LEGENDS;
   
   selectedLegend: Legend;
-  
-  constructor() { }
+
+   
+  constructor() { 
+    console.log("Selected legend:", this.selectedLegend);
+  }
 
   ngOnInit() {
   }
 
   onSelect(legend: Legend): void {
     this.selectedLegend = legend;
+    console.log("Selected legend:", this.selectedLegend);
   }
 }
